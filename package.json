@@ -1,0 +1,19 @@
+{
+  "name": "js-spellcheck",
+  "version": "0.0.1",
+  "description": "Spell checking for JS identifiers]",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/tests.js"
+  },
+  "keywords": [
+    "javascript",
+    "spellcheck",
+    "spellchecker"
+  ],
+  "author": "Dexter Edwards",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
