@@ -21,9 +21,5 @@ The first is nice but the second one is where most of the power of js-spellcheck
 
 This is still very WIP, expect breaking changes and bugs!
 
-* CLI
-* Configure dictionary
-* Path to dictionary resolution
 * Create a vscode integration
 * Autofixing
-* Load dic async
