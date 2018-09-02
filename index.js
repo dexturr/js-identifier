@@ -1,17 +1,14 @@
 'use strict';
 
 const simpleSpellChecker = require('simple-spellchecker');
-const path = require('path');
 const recast = require('recast');
 const camelCase = require('camelcase');
 const snakeCase = require('to-snake-case');
 
-const pathToDict = path.resolve('./node_modules/simple-spellchecker/dict');
-
 module.exports = class SpellChecker {
 
-  constructor(reporter) {
-    this.dictionary = simpleSpellChecker.getDictionarySync('en-GB', pathToDict);
+  constructor(reporter, pathToDictionary, locale = 'en-GB') {
+    this.dictionary = simpleSpellChecker.getDictionarySync(locale, pathToDictionary);
     this.reporter = reporter;
   }
 
@@ -23,12 +20,12 @@ module.exports = class SpellChecker {
       visitIdentifier({ value: { name } }) {
         // Variable could be in any case. Camelcase it for consistency.
         const camelCasedName = camelCase(name);
-        const snakedName = snakeCase(name);
+        const snakedName = snakeCase(camelCasedName);
         const words = snakedName.split('_');
         for (const word of words) {
           const result = checkIdentifier(word);
           if (result.misspelled) {
-            reporter(result.suggestions);
+            reporter(result);
           }
         }
         return false;
@@ -40,6 +37,7 @@ module.exports = class SpellChecker {
     let misspelled = !this.dictionary.spellCheck(idenifiter);
     if (misspelled) {
       return {
+        original: idenifiter,
         misspelled,
         suggestions: this.dictionary.getSuggestions(idenifiter),
       };

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "camelcase": "^5.0.0",
+    "globby": "^8.0.1",
     "recast": "^0.15.3",
     "simple-spellchecker": "^0.9.6",
     "to-snake-case": "^1.0.0"
