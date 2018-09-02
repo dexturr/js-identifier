@@ -7,8 +7,9 @@ const snakeCase = require('to-snake-case');
 
 module.exports = class SpellChecker {
 
-  constructor(reporter, pathToDictionary, locale = 'en-GB') {
-    this.dictionary = simpleSpellChecker.getDictionarySync(locale, pathToDictionary);
+  constructor(reporter, pathToDictionary, dictionaryName = 'en-GB') {
+    console.log(__dirname);
+    this.dictionary = simpleSpellChecker.getDictionarySync(dictionaryName, pathToDictionary);
     this.reporter = reporter;
   }
 

@@ -26,3 +26,4 @@ This is still very WIP, expect breaking changes and bugs!
 * Path to dictionary resolution
 * Create a vscode integration
 * Autofixing
+* Load dic async

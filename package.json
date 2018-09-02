@@ -22,8 +22,12 @@
   "engines": {
     "node": "8.* || >= 10.*"
   },
+  "bin": {
+    "js-spellcheck": "./bin/index.js"
+  },
   "dependencies": {
     "camelcase": "^5.0.0",
+    "commander": "^2.17.1",
     "globby": "^8.0.1",
     "recast": "^0.15.3",
     "simple-spellchecker": "^0.9.6",
