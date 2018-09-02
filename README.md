@@ -1,12 +1,12 @@
 # js-spellcheck
 
-Checks JavaScript idenitifers for spelling mistakes. For example, if we had the folllowing JS:
+Checks JavaScript identifiers for spelling mistakes. For example, if we had the following JS:
 
 ```js
     var testtVariable = 123;
 ```
 
-js-spellcheck would report on this becuase `testt` is not a valid word in the english dictionary. 
+js-spellcheck would report on this because `testt` is not a valid word in the English dictionary. 
 
 # Advantages
 
@@ -16,3 +16,12 @@ There are 2 advantages to using js-spellcheck:
 * It fixes you into using a single locale for your spelling
 
 The first is nice but the second one is where most of the power of js-spellcheck comes in, locking all code into a specific locale ensures consistency across all code files!
+
+# TODO
+
+This is still very WIP, expect breaking changes and bugs!
+
+* CLI
+* Configure dictionary
+* Path to dictionary resolution
+* Create a vscode integration
